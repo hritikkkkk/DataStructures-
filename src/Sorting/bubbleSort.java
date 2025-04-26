@@ -2,6 +2,8 @@ package Sorting;
 
 import java.util.Arrays;
 
+public class bubbleSort {
+
     /* Idea  -> Large Elements come to the end of the array by swapping
                 with adjacent Elements
 
