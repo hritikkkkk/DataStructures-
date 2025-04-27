@@ -34,7 +34,8 @@ public class InsertionSort {
             int j = i - 1;
 
             // Shift elements greater than key to the right
-            while (j >= 0 && arr[j] > key) {
+            // so that we can find out the correct position to insert
+            while (j >= 0 && arr[j] > key) {  // for decreasing order you can use '<' operator
                 arr[j + 1] = arr[j];
                 j--;
             }

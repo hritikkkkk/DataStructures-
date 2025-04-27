@@ -43,7 +43,7 @@ public class CountingSort {
 
         // Step 4: Rebuild sorted array from frequency array
         int index = 0;
-        for (int i = 0; i < count.length; i++) {
+        for (int i = count.length - 1; i >= 0; i--) {  // for increasing order start i from 0 to count.length
             while (count[i]-- > 0) {
                 arr[index++] = i;
             }

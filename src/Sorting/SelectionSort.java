@@ -37,7 +37,7 @@ public class SelectionSort {
 
             // Find the minimum element in remaining unsorted array
             for (int j = i + 1; j < nums.length; j++) {
-                if (nums[minPos] > nums[j]) {
+                if (nums[minPos] > nums[j]) {  // for decreasing order you can use '<' operator
                     minPos = j; // Update minPos if a smaller element found
                 }
             }
