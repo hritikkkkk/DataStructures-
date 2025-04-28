@@ -59,6 +59,8 @@ public class Transpose {
         return transposed; // Return the transposed matrix
     }
 
+
+
     // Main function to test the transpose operation
     public static void main(String[] args) {
         // Original matrix
