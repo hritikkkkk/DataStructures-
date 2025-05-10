@@ -158,7 +158,8 @@ public class KMP {
     public static void main(String[] args) {
         String text = "aabaacaadaabaaba";
         String pattern = "aaba";
-        System.out.println(KMPsearch(text, pattern));
+        System.out.println(Arrays.toString(longestPrefixSuffix("babab")));
+//        System.out.println(KMPsearch(text, pattern));
 
 
     }
