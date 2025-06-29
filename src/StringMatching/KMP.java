@@ -60,7 +60,8 @@ public class KMP {
 
     // Preprocess the pattern to generate the LPS array
 
-    //naive approach
+    //naive approach to generate longest prefix suffix
+    // for e.g "ababab" has the longest prefix suffix is "abab" which is of length 4
     private static int computeLPSNaive(String s) {
         int res = 0;
         int n = s.length();
@@ -158,7 +159,7 @@ public class KMP {
     public static void main(String[] args) {
         String text = "aabaacaadaabaaba";
         String pattern = "aaba";
-        System.out.println(Arrays.toString(longestPrefixSuffix("babab")));
+        System.out.println(computeLPSNaive("bbadabc"));
 //        System.out.println(KMPsearch(text, pattern));
 
 

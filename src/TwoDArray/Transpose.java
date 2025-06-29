@@ -60,13 +60,13 @@ public class Transpose {
     }
 
 
-
     // Main function to test the transpose operation
     public static void main(String[] args) {
         // Original matrix
         int[][] matrix = {
-                {1, 2, 3},
-                {4, 5, 6}
+                {1, 2, 3, 4},
+                {4, 5, 6, 7},
+                {8, 9, 10, 11}
         };
 
         // Call the transpose function
@@ -76,6 +76,8 @@ public class Transpose {
         for (int[] num : nums) {
             System.out.println(Arrays.toString(num)); // Print each row of the transposed matrix
         }
+
+        System.out.println(Arrays.deepToString(transpose(matrix)));
     }
 }
 

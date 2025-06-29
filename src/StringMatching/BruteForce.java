@@ -75,6 +75,23 @@ public class BruteForce {
 
     }
 
+    // fnd the longest prefix suffix length of pattern string
+    public static int lps(String pattern) {
+        int i = 0, j = 1, ans = 0;
+        while (j < pattern.length()) {
+            if (pattern.charAt(i) == pattern.charAt(j)) {
+                i++;
+            } else {
+                i = 0;
+                j++;
+            }
+
+
+        }
+        return i;
+    }
+
+
     public static void main(String[] args) {
         String str = "abcabcfghdegabcfgh";
         String pattern = "abcfgh";
@@ -82,7 +99,9 @@ public class BruteForce {
 
 //        boolean found = stringMatching(str, pattern);
 //        System.out.println("Pattern found? " + found);
-        search(str, pattern);
+//        search(str, pattern);
+
+        System.out.println(lps("ababab"));
     }
 }
 
