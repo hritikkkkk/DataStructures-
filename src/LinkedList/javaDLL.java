@@ -10,5 +10,7 @@ public class javaDLL {
         krishna.add("damodar");
         krishna.add("gopal");
 
+        System.out.println(krishna);
+
     }
 }
