@@ -31,6 +31,8 @@ public class DLL {
         ll.insertAtEnd(4);
         ll.insertAtEnd(4);
 
+       ll.head = ll.removeDuplicatesFromSortedDoublyLinkedList(ll.head);
+
         ll.printLL();
 
 
@@ -64,25 +66,62 @@ public class DLL {
     }
 
 
-    public void removeDuplicatesFromSortedDoublyLinkedList() {
+    public Node removeDuplicatesFromSortedDoublyLinkedList(Node head) {
+        Node temp = head, prev = null;
+        while (temp != null) {
+            if (temp.next != null && temp.val == temp.next.val) {
+                int val = temp.val;
+                while (temp != null && temp.val == val) {
+                    temp = temp.next;
+                }
+                if (prev != null) {
+                    prev.next = temp;
+                } else {
+                    head = temp;
+                }
+                if (temp != null) {
+                    temp.prev = prev;
+                }
+
+            } else {
+                prev = temp;
+                temp = temp.next;
+            }
+        }
+        return head;
+
+
+
+
+
+
+
 
     }
 
     public void printLL() {
-
+        System.out.println("Forward Traversal:");
         Node temp = head;
         Node last = null;
 
-
         while (temp != null) {
-            System.out.print(temp.val);
+            System.out.printf("[%s <- %d -> %s]  ",
+                    temp.prev != null ? temp.prev.val : "null",
+                    temp.val,
+                    temp.next != null ? temp.next.val : "null"
+            );
             last = temp;
             temp = temp.next;
-            if (temp != null) System.out.print(" <-> ");
         }
-        System.out.println(" <-> null");
 
-
+        System.out.println("\nReverse Traversal:");
+        while (last != null) {
+            System.out.print(last.val + " <- ");
+            last = last.prev;
+        }
+        System.out.println("null");
     }
+
+
 
 }
