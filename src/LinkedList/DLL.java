@@ -31,8 +31,8 @@ public class DLL {
         ll.insertAtEnd(4);
         ll.insertAtEnd(4);
 
-       ll.head = ll.removeDuplicatesFromSortedDoublyLinkedList(ll.head);
-
+//        ll.head = ll.removeDuplicatesFromSortedDoublyLinkedList(ll.head);
+        ll.removeDuplicate(ll.head);
         ll.printLL();
 
 
@@ -89,14 +89,48 @@ public class DLL {
             }
         }
         return head;
+    }
 
+    public void removeDuplicate(Node head) {
+        if (head == null || head.next == null) {
+            return;
+        }
+        Node temp = head;
+        while (temp != null && temp.next != null) {
+            if (temp.val == temp.next.val) {
+                deleteNode(temp.next);
+            } else {
+                temp = temp.next;
+            }
+        }
+    }
 
+    public void deleteNode(Node del) {
+//        if (del == null) {
+//            return;
+//        }
+//
+//        if (del.prev == null) {  //head of the linkedlist
+//            del.next.prev = null;
+//            del = del.next;
+//        } else {
+//            if (del.next != null) { //middle node
+//                del.next.prev = del.prev;
+//
+//            }
+//            del.prev.next = del.next;   // tail node
+//
+//
+//        }
 
+        if (del == null) return;
 
-
-
-
-
+        if (del.prev != null) {
+            del.prev.next = del.next;
+        }
+        if (del.next != null) {
+            del.next.prev = del.prev;
+        }
     }
 
     public void printLL() {
@@ -121,7 +155,6 @@ public class DLL {
         }
         System.out.println("null");
     }
-
 
 
 }
