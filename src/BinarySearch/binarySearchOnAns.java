@@ -24,8 +24,8 @@ public class binarySearchOnAns {
     }
 
     public static void main(String[] args) {
-       int[]nums={10,20,30,40};
-        System.out.println(FlipCost(nums,2));
+        int[] nums = {10, 20, 30, 40};
+        System.out.println(FlipCost(nums, 2));
     }
 
     public static boolean isValid(int[] nums, int max, int k) {
